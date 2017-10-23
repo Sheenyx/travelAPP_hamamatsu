@@ -1,0 +1,11 @@
+document.write('<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>');
+document.write('<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>');
+document.write('<script type="text/javascript" src="http://burara.jp/web/js/anchor.js"></script>');
+document.write('<script type="text/javascript" src="http://burara.jp/web/js/areatab.js"></script>');
+document.write('<script type="text/javascript" src="http://burara.jp/web/js/jglycy-1.0.js"></script>');
+document.write('<script type="text/javascript" src="http://burara.jp/web/js/jtruncsubstr-captionli.js"></script>');
+document.write('<script type="text/javascript" src="http://burara.jp/web/js/jtruncsubstr-maintext.js"></script>');
+document.write('<script type="text/javascript" src="http://burara.jp/web/js/scroll.js"></script>');
+document.write('<script type="text/javascript" src="http://burara.jp/web/js/slidemenu.js"></script>');
+document.write('<script type="text/javascript" src="http://burara.jp/web/js/swapimage.js"></script>');
+//document.write('<script type="text/javascript" src="http://burara.jp/web/js/radiokaijo.js"></script>');

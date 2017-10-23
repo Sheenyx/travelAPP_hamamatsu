@@ -1,0 +1,135 @@
+@charset "UTF-8";
+/* 日本版エリア別ページスタイル */
+.hide {
+display:none;
+}
+.area_tab { /* エリア名選択メニュー */
+	margin-bottom:20px;
+	font-size:0;
+}
+.area_tab li {
+	font-size:14px;
+	list-style:none;
+	display:inline-block;
+	/display:inline;
+	/zoom:1;
+	width:49%;
+	cursor:pointer;
+	padding:10px 0;
+	border:1px solid #ddd;
+	border-radius:5px;
+}
+.area_tab li:hover {
+	background-color:#eee;
+}
+.area_tab li.select {
+	background:url(../img/jp/submenu.png) bottom repeat-x ;
+}
+.area_main h2 { /* 各エリア見出し */
+	display:block;
+	width:100%;
+	height:0;
+	/* 表示画像の高さ ÷ 表示画像の幅 × 100 */
+	padding-top:22.57%;
+	text-indent:-9999px;
+	margin-bottom:10px;
+}
+.ja .susukino h2 {
+	background:url(../img/jp/index_jp_susukino.png) no-repeat;
+	background-size:contain;
+}
+.ja .dohri h2 {
+	background:url(../img/jp/index_jp_dohri.png) no-repeat;
+	background-size:contain;
+}
+.ja .satsueki h2 {
+	background:url(../img/jp/index_jp_satsueki.png) no-repeat;
+	background-size:contain;
+}
+.ja .etc h2 {
+	background:url(../img/jp/index_jp_etc.png) no-repeat;
+	background-size:contain;
+}
+.en .susukino h2 {
+	background:url(../img/jp/index_en_susukino.png) no-repeat;
+	background-size:contain;
+}
+.en .dohri h2 {
+	background:url(../img/jp/index_en_dohri.png) no-repeat;
+	background-size:contain;
+}
+.en .satsueki h2 {
+	background:url(../img/jp/index_en_satsueki.png) no-repeat;
+	background-size:contain;
+}
+.en .etc h2 {
+	background:url(../img/jp/index_en_etc.png) no-repeat;
+	background-size:contain;
+}
+.area_main p { /* 各エリア概要 */
+	text-align:left;
+	margin-bottom:30px;
+}
+.area_list li {
+	list-style:none;
+}
+.area_list li dl {
+	border-bottom:1px solid #703124;
+	padding-bottom:10px;
+	margin-bottom:20px;
+	text-align:left;
+}
+.area_list li:last-child dl {
+	border:none;
+	margin:0;
+}
+.area_list dl a {
+	text-decoration:none;
+	border-radius:10px;
+	box-shadow:1px 1px 5px 0px #999;
+	-moz-box-shadow:1px 1px 5px 0px #999;
+	-webkit-box-shadow:1px 1px 5px 0px #999;
+	display:block;
+	overflow:hidden;
+}
+.area_list dt {
+	padding-top:3px;
+	padding-right:15px;
+}
+.ja .area_list dt {
+	padding-top:6px;
+}
+.area_list dt img {
+	width:25%;
+	float:left;
+	margin-top:-3px;
+	margin-right:5%;
+}
+.ja .area_list dt img {
+	margin-top:-6px;
+}
+.area_list dt em {
+	color:#fff;
+	background:#703124;
+	padding:3px 5px;
+}
+.area_list dt strong {
+	display:block;
+	margin-left:30%;
+	margin-top:3px;
+	font-size:18px;
+	color:#231815;
+}
+.area_list dt strong small{
+	font-size:15px;
+}
+.area_list dt:hover {
+	background:#f4f4f4;
+}
+.area_list dd {
+	padding-top:10px;
+	font-size:0;
+}
+.area_list dd ul {
+	font-size:0;
+}

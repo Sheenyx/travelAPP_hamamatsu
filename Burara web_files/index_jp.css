@@ -1,0 +1,97 @@
+@charset "UTF-8";
+/* 日本版サイトトップスタイル */
+h2 {
+	text-align:left;
+	line-height:1.5;
+	font-size:16px;
+	color:#703125;
+	margin-bottom:20px;
+}
+#areamenu {
+	font-size:0;
+}
+#areamenu li {
+	font-size:14px;
+	list-style:none;
+	text-align:left;
+	margin-bottom:20px;
+}
+#areamenu li:before {
+	font-family:FontAwesome;
+	content:'\f009';
+	margin-right:3px;
+}
+.ja #areamenu li#noodle {
+	width:45%;
+	display:inline-block;
+	margin-right:5%;
+}
+.ja #areamenu li#night {
+	width:45%;
+	display:inline-block;
+	/display:block;
+	/zoom:1;
+	margin-left:5%;
+}
+#areamenu li a {
+	display:block;
+	width:100%;
+	height:0;
+	/* 表示画像の高さ ÷ 表示画像の幅 × 100 */
+	padding-top:22.57%;
+	text-indent:-9999px;
+	overflow:hidden;
+}
+.ja #areamenu li#noodle a, .ja #areamenu li#night a {
+	padding-top:96.5%;
+}
+#areamenu li a:hover {
+	opacity:0.4;
+	filter:alpha(opacity=40);
+	-ms-filter:"alpha( opacity=40 )";
+	background-color:#fff;
+}
+.ja #susukino a {
+	background:url(../img/jp/index_jp_susukino.png) no-repeat;
+	background-size:contain;
+}
+.ja #dohri a {
+	background:url(../img/jp/index_jp_dohri.png) no-repeat;
+	background-size:contain;
+}
+.ja #satsueki a {
+	background:url(../img/jp/index_jp_satsueki.png) no-repeat;
+	background-size:contain;
+}
+.ja #etc a {
+	background:url(../img/jp/index_jp_etc.png) no-repeat;
+	background-size:contain;
+}
+.ja #noodle a {
+	background:url(../img/jp/index_jp_noodle.png) no-repeat;
+	background-size:contain;
+}
+.ja #night a {
+	background:url(../img/jp/index_jp_night.png) no-repeat;
+	background-size:contain;
+}
+.en #susukino a {
+	background:url(../img/jp/index_en_susukino.png) no-repeat;
+	background-size:contain;
+}
+.en #dohri a {
+	background:url(../img/jp/index_en_dohri.png) no-repeat;
+	background-size:contain;
+}
+.en #satsueki a {
+	background:url(../img/jp/index_en_satsueki.png) no-repeat;
+	background-size:contain;
+}
+.en #etc a {
+	background:url(../img/jp/index_en_etc.png) no-repeat;
+	background-size:contain;
+}
+.en #noodle a {
+	background:url(../img/jp/index_en_noodle.png) no-repeat;
+	background-size:contain;
+}

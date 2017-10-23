@@ -1,0 +1,216 @@
+@charset "UTF-8";
+/* 日本版汎用スタイル */
+@import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+@media (-webkit-min-device-pixel-ratio: 2),
+	(min-resolution: 2dppx) {
+		.class {
+			background-image: url(http://image.itmedia.co.jp/ait/articles/1309/26/image-2x.png);
+		}
+	}
+html:lang(ja), .ja #menubutton { /* 日本語サイトのフォント指定 */
+	font-family:"Noto Sans Japanese","sans-serif";
+}
+html:lang(en), .en #menubutton { /* 英語サイトのフォント指定 */
+	font-family:"Roboto","Noto Sans Japanese","sans-serif";
+}
+html, body {
+	position:relative;
+	margin:0 0 0 auto;
+	padding:0;
+	text-align:center;
+	font-size:14px;
+	line-height:1.56;
+	color:#454545;
+	word-wrap:break-word;
+	overflow-wrap:break-word;
+	overflow-x:hidden;
+	min-width:320px;
+	max-width:640px;
+}
+img {
+	border:none;
+	max-width:100%;
+}
+* { /* 全タグのmarginとpaddingをリセット */
+	margin:0;
+	padding:0;
+	font-size:100%;
+	font-weight:normal;
+	font-style:normal;
+}
+article, aside, details, figcaption, figure, .footer, .header, menu, nav, section, summary {
+	display:block;
+}
+ruby {
+	position:relative;
+}
+ruby rt {
+	position:relative;
+	top:5px;
+	font-size:55%;
+}
+@media all and (-ms-high-contrast:none) {
+	ruby rt { top:0; }
+}
+.clearfix:after { /* floatをクリアする */
+	content:".";
+	clear:both;
+	display:block;
+	height:0;
+	font-size:0;
+	visibility:hidden;
+}
+* html .clearfix { /* IE6 */
+	zoom:1;
+}
+*:first-child+html .clearfix { /* IE7 */
+	zoom:1;
+}
+input[type="button"],input[type="submit"] {
+-webkit-appearance:none;
+}
+#slide_menu {/* 言語切り替えメニュー */
+	display:none;
+	position:fixed;
+	top:0;
+	right:-200px;
+	width:200px;
+	height:100%;
+}
+#slide_menu li {
+	border:solid 1px #ddd;
+	border-top:none;
+	list-style:none;
+}
+#slide_menu li a {
+	display:block;
+	padding:10px 0;
+	color:#454545;
+	text-decoration:none;
+	background-color:#fff;
+}
+#slide_menu li a:hover {
+	background-color:#eee;
+}
+#slide_menu #sm-jp a {/* 日本語を緑にする */
+	color:#49b232;
+}
+#menubutton {
+	display:none;
+	position:absolute;
+	top:30px;
+	right:10px;
+	outline:none;
+	border:1px solid #fff;
+	border-radius:3px;
+	background:#fff;
+	color:#454545;
+	padding:0.5em;
+}
+.langbuttons { /* 言語切り替えボタン */
+	margin:0 auto;
+	padding:5px 10px 20px;
+	font-size:0;
+}
+.langbuttons li {
+	list-style:none;
+	display:inline-block;
+	/display:inline;
+	/zoom:1;
+	border:1px solid #ccc;
+	width:100px;
+	font-size:14px;
+	vertical-align:middle;
+	background:#eee;
+}
+.langbuttons li a {
+	display:block;
+	cursor:pointer;
+	padding:8px 0;
+	text-decoration:none;
+	color:#000;
+}
+.langbuttons li#ja {
+	border-top-left-radius:30px;
+	border-bottom-left-radius:30px;
+}
+.langbuttons li#en {
+	border-top-right-radius:30px;
+	border-bottom-right-radius:30px;
+}
+.ja li#ja, .en li#en {
+	background:#45a31f;
+}
+.ja li#ja a, .en li#en a {
+	color:#fff;
+}
+.container {
+	min-width:320px !important;
+	max-width:640px !important;
+	overflow:hidden;
+}
+.header {
+	background:url(../img/logo.png) no-repeat 10px 10px;
+	height:80px;
+	background-color:#703125;
+}
+.header h1 a {
+	margin-right:90px;
+	height:80px;
+	display:block;
+	text-indent:-9999px;
+}
+.main {
+	min-width:288px;
+	max-width:576px;
+	margin:0 5%;
+}
+.footer {
+	min-width:288px;
+	max-width:576px;
+	margin:0 5% 60px;
+	padding-top:20px;
+}
+.footer p {
+	border-top:1px solid #717071;
+	color:#717071;
+	padding:15px 20%;
+}
+#page-top { /* トップへ戻るボタン */
+	margin:-60px 20% 20px;
+}
+@media (max-width:479px) { /* スマートフォン用の設定 */
+#page-top {
+	margin:0;
+	position:fixed;
+	bottom:10px;
+	left:10%;
+	right:10%;
+}
+}
+#page-top ul {
+	font-size:0;
+}
+#page-top li {
+	font-size:14px;
+	list-style:none;
+	display:inline-block;
+	/display:inline;
+	/zoom:1;
+	width:31%;
+	margin:0 1%;
+}
+#page-top a {
+	display:block;
+	text-decoration:none;
+	color:#777;
+	background:#fff;
+	border:1px solid #ddd;
+	border-radius:5px;
+	padding:0.5em 0;
+}
+#page-top a:hover {
+	background-color:#eee;
+}
