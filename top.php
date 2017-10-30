@@ -34,13 +34,14 @@ function clickNow(){
 		<nav>
 
 			<ul id="areamenu">
-				<li id="travelling">観光地へ遊びに行こう!<?php echo('<a href="web/jp.php#tab1?name=' . $_COOKIE["PHPSESSID"] .' ">観光</a>');?>
+        <li id="recommendation">あなたにぴったりのスポットを薦める!<?php echo('<a href="web/jp3.php#tab1">オススメ</a>');?>
       </li>
-				<li id="eating">美味しいものを食べよう!<?php echo('<a href="web/jp.php#tab2?name=' . $_COOKIE["PHPSESSID"] .' ">グルメ</a>');?>
+				<li id="travelling">観光地へ遊びに行こう!<?php echo('<a href="web/jp3.php#tab2">観光</a>');?>
       </li>
-				<li id="shopping">いっぱい買い物しよう!<?php echo('<a href="web/jp.php#tab3?name=' . $_COOKIE["PHPSESSID"] .' ">買い物</a>');?>
-				<li id="recommendation">あなたにぴったりのスポットを薦める!<?php echo('<a href="web/jp.php#tab4?name=' . $_COOKIE["PHPSESSID"] .' ">オススメ</a>');?></li>
-?>
+				<li id="eating">美味しいものを食べよう!<?php echo('<a href="web/jp3.php#tab3">グルメ</a>');?>
+      </li>
+				<li id="shopping">いっぱい買い物しよう!<?php echo('<a href="web/jp3.php#tab4">買い物</a>');?>
+
       </ul>
 		</nav>
 <h3 id="title">ユーザ名を入力してください</h3>

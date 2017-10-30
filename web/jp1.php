@@ -13,6 +13,7 @@
 <body>
 
 
+<div class="container">
 
 
 	<header><div class="header ja" id="top">
@@ -22,10 +23,7 @@
 
 
 
-	<section>
-
-
-		<div class="main ja">
+	<section><div class="main ja">
 		<nav><ul class="area_tab">
 			<li id="tab1" class="select">観光</li>
 			<li id="tab2">グルメ</li>
@@ -35,53 +33,24 @@
 		<div class="area_main susukino">
 			<h2>浜松で観光する</h2>
 			<nav><ul class="area_list">
-				<?php
-				require('api_login.php');
-				$label = $client->makeLabel('Traveling');
-				$nodes = $label->getNodes();
-				foreach ($nodes as $node) {
 
-
-						$spot=$node->getProperty('name');
-					echo ($node->getProperty('name').'<input type="radio" name="radio' . $spot . '" id="radio3">
-					<label for="radioA">高関心</label>
-					<input type="radio" name="radio' . $spot . '" id="radio2">
-					<label for="radioB">中関心</label>
-					<input type="radio" name="radio' . $spot . '" id="radio1">
-					<label for="radioC">低関心</label>
-					<input type="radio" name="radio' . $spot . '" id="radio0">
-					<label for="radioD">無関心</label><a href="spot.php?name=' . $spot .' ">
-					' . $spot . 'の関連スポット<a><br>');
-
-				}
-
-
-				?>
 			</ul></nav>
 		</div>
 		<div class="area_main dohri hide">
 			<h2>浜松グルメを食べる</h2>
 			<nav><ul class="area_list">
-				<?php
-				require('api_login.php');
-				$label = $client->makeLabel('Gourmet');
-				$nodes = $label->getNodes();
-				foreach ($nodes as $node) {
-
-
-						$spot=$node->getProperty('name');
-
-					echo ('名称 : ' . $node->getProperty('name').'<input type="radio" name="' . $spot . '" value="3" id="radio3">
-					<label for="radio3">高関心</label>
-					<input type="radio" name="' . $spot . '" value="2" id="radio2">
-					<label for="radio2">中関心</label>
-					<input type="radio" "' . $spot . '" value="1" id="radio1">
-					<label for="Radio1">低関心</label>
-					<input type="radio" name="' . $spot . '" value="0" id="radio0">
-					<label for="radio0">無関心</label>
-					<a href="spot.php?name=' . $spot .' ">' . $spot . 'の関連スポット<a><br>');
-				}
-				?>
+				<p>
+	徳川家康：
+	<input type="radio" id="3" name="tokugawa" value="3" />
+	<label for="3">高関心</label>
+	<input type="radio" id="2" name="tokugawa" value="2" />
+	<label for="2">中関心</label>
+	<input type="radio" id="1" name="tokugawa" value="1" />
+	<label for="1">低関心</label>
+	<input type="radio" id="0" name="tokugawa" value="0" />
+	<label for="0">無関心</label>
+</p>
+<button type="button" id="btn">クリック</button>
 
 			</ul></nav>
 		</div><!--dohri-->
@@ -107,8 +76,9 @@
 					<label for="radioC">低関心</label>
 					<input type="radio" value="' . $spot . '" name="radio' . $spot . '" id="radio0">
 					<label for="radioD">無関心</label>
-					<a href="spot.php?name=' . $spot .' ">' . $spot . 'の関連スポット<a><br>');
+					<input type="submit"><a href="spot.php?name=' . $spot .' ">' . $spot . 'の関連スポット<a><br>');
 				}
+				  echo ('<input type="submit" name="Submit" value="送信">');
 				?>
 			</ul></nav>
 		</div><!--satsueki-->
@@ -122,10 +92,11 @@
 				$label = $client->makeLabel('Hotel');
 				$nodes = $label->getNodes();
 				$Hotel=$node->getProperty('name');
-				$Hotel2='ホテル';
-       echo ('名称 : ' . $Hotel2);
+
 				foreach ($nodes as $node) {
-					echo ('名称 : ' . $node->getProperty('name'));
+					echo ('名称 : ' . $node->getProperty('name').'<input type="radio" name="radio' . $Hotel . '" id="radioA">
+					<label for="radioA">ここにいる</label>
+					<input type="submit"><br>');
 
 				}
 			?>
@@ -137,18 +108,35 @@
 
 
 
-	</div>
-	<span class="input-group-btn">
-    <button class="btn btn-default search" type="submit"  value="detailsearch">検索</button>
-  </span>
-</form>
-</section><!--main en-->
+	</div></section><!--main en-->
 
 
 	<nav><div id="page-top"><ul class="clearfix">
 		<li id="goback"><a href="javascript:history.back()"><i class="fa fa-undo" aria-hidden="true"></i> BACK</a></li>
 		<li id="gohome"><a href="../top.php"><i class="fa fa-home"></i> HOME</a></li>
 	</ul></div></nav>
+	<?php
+	require('api_login.php');
+	// STARTノード作成
+	$startNode = $client->makeNode();
+	$startNode->setProperty('name', 'start node')
+	    ->setProperty('created', '2015-08')
+	    ->save();
+	$startLabel = $client->makeLabel('START');
+	$startNode->addLabels([$startLabel]);
+	// ENDノード作成
+	$props = [
+	    'name' => 'end node',
+	    'created' => '2015-08'
+	];
+	$endNode = $client->makeNode($props)
+	    ->save();
+	$endLabel = $client->makeLabel('END');
+	$endNode->addLabels([$endLabel]);
+	// STARTノードとENDノードのリレーションシップ作成
+	$startNode->relateTo($endNode, 'HAS_RELATION')
+	    ->setProperty('created', '2015-08')
+	    ->save();
 
 
 

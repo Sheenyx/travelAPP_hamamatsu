@@ -22,10 +22,12 @@
 
 	<?php
 	require('api_login.php');
+	$Username=$_COOKIE["PHPSESSID"];
+
 	$cypherStatement =
-	"MATCH (us1:USER { name: 'xyz' })-[:Like]->(d)<-[:canfind]-(共通スポット)-[:belongsTo]->(e)<-[:contains]-(f)<-[:belongsTo]-(us1:USER { name: 'xyz' }) "
-	. "MATCH (us2:USER { name: 'xyz' })-[:livedIn]->(ho1:Hotel { name: 'ホテルコンコルド' })-[r:DISTANCE]->(共通スポット) "
-	. "WHERE r.walk*2+共通スポット.timecost<=90 OR r.bus*2+共通スポット.timecost<=90 "
+	"MATCH (us1:USER { name: '$Username' })-[:Like]->(d)<-[:canfind]-(共通スポット)-[:belongsTo]->(e)<-[:contains]-(f)<-[:belongsTo]-(us1:USER { name: '$Username' }) "
+	. "MATCH (us2:USER { name: '$Username' })-[:livedIn]->(ho1:Hotel { name: 'ホテルコンコルド' })-[r:DISTANCE]->(共通スポット) "
+	. "WHERE r.walk*2+共通スポット.timecost<=1000 OR r.bus*2+共通スポット.timecost<=1000 "
 	. "RETURN 共通スポット ";
 
 	$cypherQuery = new Everyman\Neo4j\Cypher\Query($client, $cypherStatement);
@@ -39,10 +41,6 @@
 		}
 ?>
 
-	<nav><div id="page-top"><ul class="clearfix">
-		<li id="goback"><a href="javascript:history.back()"><i class="fa fa-undo" aria-hidden="true"></i> BACK</a></li>
-		<li id="gohome"><a href="../観光.php"><i class="fa fa-home"></i> HOME</a></li>
-	</ul></div></nav>
 
 
 </body>
